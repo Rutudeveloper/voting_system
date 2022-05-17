@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>registration page </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+<div >
+<div class="container m-5 p-5 "style="background:#cccccc  ;">
+  <h2><center>create new account</center> </h2>
+  <form action="api1/register.php" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <div class="form-group">
+            <label for="name"><b> Full Name:</b></label>
+            <input type="fname" class="form-control" id="fname" placeholder="Enter name" name="fname">
+          </div>
+      <label for="Pan NO"><b>Pan NO</b></label>
+      <input type="pancard" class="form-control" id="pancard" placeholder="Enter pancard no" name="pancard" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required >
+      <label for="Password"><b>Password</b></label>
+      <input type="password" class="form-control" id="password "placeholder="Enter password" name="pass" >
+      <label for="Password"><b>confirm Password</b></label>
+      <input type="cpass" class="form-control" id="cpass" name="cpass" placeholder="Confirm Password" required>
+    </div>
+    <div>
+      <label for="phone"><b>phone no.</b></label>
+    <input type="mob" id="mob" maxlength="14" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" 
+    data-fv-phone-country11="IN" required="required" data-fv-notempty-message="This field cannot be left blank." placeholder="Mobile No. "
+     class="form-control" name="mob" data-fv-field="data[User][mobile]">
+  </div>
+    <div class="form-group">
+      <label for="comment"><b>Address</b></label>
+      <textarea class="form-control" rows="3" id="address" name="add"></textarea>
+    </div>
+    <label for="sel1"><b>DOB :</b></label>
+    <div>
+    <input type="date" id="bday" name="bday"></div>
+     <div class="form-group form-check">
+        <label class="form-check-label">
+          <div id="upload" style="width: 30%">
+            Upload image: <input type="file" id="profile" name="profile" required>
+            <input type="file" name="fileToUpload" id="fileToUpload">
+        </div><br>
+        <div id="upload" style="width: 30%">
+            Select your role:
+            <select name="role">
+                <option value="1">Voter</option>
+                <option value="2">Group</option>
+            </select><br>
+        </div><br>
+          <input class="form-check-input" type="checkbox" name="remember"> 
+          <b>Yes/No</b>
+        </label>
+      </div> 
+      <input type="button" name="cancelbtn" value="cancel">
+     <button id="loginbtn" type="button" name="registerbtn">Register</button><br><br>
+      Already user? <a href="/loginpaage.html">Login here</a>
+  </form>
+</div>
+</div>
+</body>
+</html>
